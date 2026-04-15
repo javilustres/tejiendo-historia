@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">Artículo — Tejiendo Historia | Manuel Aguilera Povedano</title>
+    <meta name="description" id="page-desc" content="Artículo de Manuel Aguilera Povedano sobre la Guerra Civil Española y Mallorca." />
+    <meta name="author" content="Manuel Aguilera Povedano" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Tejiendo Historia" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Maguilera_" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --color-primary: #1B3A5C;
+            --color-secondary: #8B2020;
+            --color-accent: #beddf8;
+            --color-dark: #100f0f;
+            --color-text: #2a2a2a;
+            --color-muted: #6b6b6b;
+            --color-bg: #f9f7f3;
+            --color-bg-dark: #0e1a26;
+            --color-white: #ffffff;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Source Serif 4', Georgia, serif;
+            --radius: 4px;
+            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+            --max-width: 1100px;
+            --article-width: 740px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); font-size: 18px; line-height: 1.7; color: var(--color-text); background: var(--color-bg); }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+
+        /* ─── HEADER ─── */
+        .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(14,26,38,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(190,221,248,0.15); }
+        .header-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+        .site-logo { display: flex; align-items: center; gap: 12px; }
+        .site-logo img { height: 40px; width: auto; }
+        .logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+        .logo-text .name { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--color-white); letter-spacing: 0.02em; }
+        .logo-text .tagline { font-size: 11px; color: var(--color-accent); letter-spacing: 0.12em; text-transform: uppercase; }
+        .site-nav { display: flex; align-items: center; gap: 36px; }
+        .site-nav a { font-size: 14px; color: rgba(255,255,255,0.82); letter-spacing: 0.05em; text-transform: uppercase; transition: var(--transition); position: relative; }
+        .site-nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--color-accent); transition: var(--transition); }
+        .site-nav a:hover { color: var(--color-accent); }
+        .site-nav a:hover::after { width: 100%; }
+        .nav-cta { border: 1px solid rgba(190,221,248,0.4); padding: 8px 18px; border-radius: var(--radius); }
+        .nav-cta:hover { background: rgba(190,221,248,0.08); }
+        .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+        .nav-toggle span { width: 24px; height: 2px; background: var(--color-white); display: block; }
+
+        /* ─── BREADCRUMB ─── */
+        .breadcrumb-bar { background: var(--color-bg-dark); padding: 88px 24px 24px; }
+        .breadcrumb-inner { max-width: var(--article-width); margin: 0 auto; }
+        .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.5); }
+        .breadcrumb a { color: rgba(255,255,255,0.5); transition: var(--transition); }
+        .breadcrumb a:hover { color: var(--color-accent); }
+        .breadcrumb span { color: rgba(255,255,255,0.2); }
+
+        /* ─── ARTICLE HEADER ─── */
+        .articulo-header { background: var(--color-bg-dark); padding: 24px 24px 64px; }
+        .articulo-header-inner { max-width: var(--article-width); margin: 0 auto; }
+        .articulo-cat { display: inline-block; font-size: 11px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 20px; border-left: 2px solid var(--color-secondary); padding-left: 12px; }
+        .articulo-titulo { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; line-height: 1.15; color: var(--color-white); margin-bottom: 24px; }
+        .articulo-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+        .articulo-fecha { font-size: 14px; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; }
+        .articulo-wp-link { font-size: 13px; color: rgba(255,255,255,0.4); border: 1px solid rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 20px; transition: var(--transition); }
+        .articulo-wp-link:hover { color: var(--color-accent); border-color: var(--color-accent); }
+
+        /* ─── ARTICLE BODY ─── */
+        .articulo-body-wrap { padding: 64px 24px 96px; }
+        .articulo-body { max-width: var(--article-width); margin: 0 auto; }
+
+        /* Párrafos */
+        .articulo-body p { margin-bottom: 1.5em; }
+        .articulo-body .wp-block-paragraph:empty { display: none; }
+
+        /* Imágenes */
+        .articulo-body img { max-width: 100%; height: auto; border-radius: var(--radius); margin: 0 auto; }
+        .articulo-body figure { margin: 2.5em 0; }
+        .articulo-body figcaption,
+        .articulo-body .wp-element-caption { font-size: 14px; color: var(--color-muted); text-align: center; margin-top: 10px; font-style: italic; line-height: 1.5; }
+        .articulo-body .wp-block-image { text-align: center; }
+        .articulo-body .aligncenter { margin-left: auto; margin-right: auto; }
+
+        /* Tipografía */
+        .articulo-body strong { font-weight: 600; }
+        .articulo-body em { font-style: italic; }
+        .articulo-body a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; }
+        .articulo-body a:hover { color: var(--color-secondary); }
+        .articulo-body h2, .articulo-body h3, .articulo-body h4 {
+            font-family: var(--font-display);
+            color: var(--color-dark);
+            margin: 2em 0 0.75em;
+        }
+        .articulo-body h2 { font-size: 1.8rem; }
+        .articulo-body h3 { font-size: 1.4rem; }
+
+        /* Tablas */
+        .articulo-body table { width: 100%; border-collapse: collapse; margin: 2em 0; font-size: 15px; }
+        .articulo-body th, .articulo-body td { border: 1px solid #ddd; padding: 10px 14px; text-align: left; vertical-align: top; }
+        .articulo-body th { background: var(--color-bg-dark); color: var(--color-white); font-weight: 600; }
+        .articulo-body tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+        .articulo-body .wp-block-table { overflow-x: auto; }
+        .articulo-body .has-fixed-layout { table-layout: auto; }
+
+        /* YouTube / iframes */
+        .articulo-body .wp-block-embed__wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 2em 0;
+            border-radius: var(--radius);
+        }
+        .articulo-body .wp-block-embed__wrapper iframe {
+            position: absolute !important;
+            top: 0; left: 0;
+            width: 100% !important;
+            height: 100% !important;
+            border: none;
+        }
+        .articulo-body .embed-youtube { display: block !important; }
+
+        /* Blockquotes */
+        .articulo-body blockquote {
+            border-left: 3px solid var(--color-secondary);
+            padding: 16px 24px;
+            margin: 2em 0;
+            background: rgba(139,32,32,0.04);
+            font-style: italic;
+            color: var(--color-muted);
+        }
+
+        /* Listas */
+        .articulo-body ul, .articulo-body ol {
+            margin: 1em 0 1.5em 1.5em;
+        }
+        .articulo-body li { margin-bottom: 0.4em; }
+
+        /* ─── FOOTER DEL ARTÍCULO ─── */
+        .articulo-footer-nav { max-width: var(--article-width); margin: 0 auto 64px; padding: 0 24px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+        .btn-back { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border: 1px solid var(--color-primary); border-radius: var(--radius); font-size: 14px; color: var(--color-primary); transition: var(--transition); }
+        .btn-back:hover { background: var(--color-primary); color: var(--color-white); }
+        .btn-wp { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--color-bg-dark); border-radius: var(--radius); font-size: 14px; color: rgba(255,255,255,0.7); transition: var(--transition); }
+        .btn-wp:hover { color: var(--color-accent); }
+
+        /* ─── NOT FOUND ─── */
+        .not-found { text-align: center; padding: 120px 24px; }
+        .not-found h2 { font-family: var(--font-display); font-size: 2rem; color: var(--color-dark); margin-bottom: 16px; }
+        .not-found p { color: var(--color-muted); margin-bottom: 32px; }
+
+        /* ─── FOOTER ─── */
+        .site-footer { background: var(--color-bg-dark); color: rgba(255,255,255,0.7); padding: 60px 24px 32px; }
+        .footer-inner { max-width: var(--max-width); margin: 0 auto; }
+        .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 60px; margin-bottom: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .footer-brand p { margin-top: 16px; font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.55); }
+        .footer-col h4 { font-family: var(--font-display); font-size: 14px; font-weight: 600; color: var(--color-white); margin-bottom: 20px; }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .footer-col ul li a { font-size: 14px; color: rgba(255,255,255,0.55); transition: var(--transition); }
+        .footer-col ul li a:hover { color: var(--color-accent); }
+        .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+        .footer-copy { font-size: 13px; color: rgba(255,255,255,0.35); }
+        .footer-social { display: flex; gap: 16px; }
+        .footer-social a { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+        .footer-social a:hover { border-color: var(--color-accent); }
+        .footer-social svg { width: 16px; height: 16px; fill: rgba(255,255,255,0.6); }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 768px) {
+            .site-nav { display: none; flex-direction: column; align-items: flex-start; gap: 0; position: absolute; top: 68px; left: 0; right: 0; background: rgba(14,26,38,0.98); padding: 16px 24px 24px; border-bottom: 1px solid rgba(190,221,248,0.1); }
+            .site-nav.open { display: flex; }
+            .site-nav a { padding: 12px 0; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.06); }
+            .nav-toggle { display: flex; }
+            .articulo-titulo { font-size: 1.6rem; }
+            .footer-top { grid-template-columns: 1fr; gap: 40px; }
+            .articulo-body table { font-size: 13px; }
+            .articulo-body th, .articulo-body td { padding: 7px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="site-logo">
+            <img src="assets/logo.png" alt="Tejiendo Historia" />
+            <div class="logo-text">
+                <span class="name">Tejiendo Historia</span>
+                <span class="tagline">Periodismo histórico</span>
+            </div>
+        </a>
+        <nav class="site-nav" id="site-nav">
+            <a href="index.html">Inicio</a>
+            <a href="servicios.html">Publicaciones</a>
+            <a href="articulos.html" class="nav-active">Artículos</a>
+            <a href="nosotros.html">Sobre mí</a>
+            <a href="contacto.html" class="nav-cta">Contacto</a>
+        </nav>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<!-- Contenido generado dinámicamente -->
+<div id="articulo-root">
+    <div class="not-found" style="padding-top: 140px;">
+        <p>Cargando artículo…</p>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="site-logo" style="margin-bottom:0;">
+                    <img src="assets/logo.png" alt="Tejiendo Historia" style="height:36px;" />
+                    <div class="logo-text">
+                        <span class="name">Tejiendo Historia</span>
+                        <span class="tagline">Periodismo histórico</span>
+                    </div>
+                </div>
+                <p>Blog de investigación histórica de Manuel Aguilera Povedano, especializado en la Guerra Civil Española y su memoria en Mallorca y Baleares.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="articulos.html">Artículos</a></li>
+                    <li><a href="servicios.html">Publicaciones</a></li>
+                    <li><a href="nosotros.html">Sobre mí</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="mailto:manuelaguilerapovedano@gmail.com">manuelaguilerapovedano@gmail.com</a></li>
+                    <li><a href="https://x.com/Maguilera_" target="_blank" rel="noopener">@Maguilera_ en X</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copy">© 2026 Manuel Aguilera Povedano · Tejiendo Historia</p>
+            <div class="footer-social">
+                <a href="https://x.com/Maguilera_" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="mailto:manuelaguilerapovedano@gmail.com">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="articulos-data.js"></script>
+<script>
+    // ─── Navegación móvil ───
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+
+    // ─── Mapas de etiquetas de categoría ───
+    const CAT_LABELS = {
+        historia: 'Historia',
+        academico: 'Académico',
+        opinion: 'Opinión'
+    };
+
+    // ─── Leer ID de URL ───
+    const params = new URLSearchParams(window.location.search);
+    const artId = params.get('id');
+
+    const root = document.getElementById('articulo-root');
+
+    if (!artId || !ARTICULOS_DATA) {
+        root.innerHTML = `
+            <div class="not-found">
+                <h2>Artículo no encontrado</h2>
+                <p>No hemos podido localizar este artículo.</p>
+                <a href="articulos.html" class="btn-back">← Volver a artículos</a>
+            </div>`;
+    } else {
+        const art = ARTICULOS_DATA.find(a => a.id === artId);
+
+        if (!art) {
+            root.innerHTML = `
+                <div class="not-found">
+                    <h2>Artículo no encontrado</h2>
+                    <p>No existe el artículo con ID ${artId}.</p>
+                    <a href="articulos.html" class="btn-back">← Volver a artículos</a>
+                </div>`;
+        } else {
+            // Actualizar título y meta
+            document.getElementById('page-title').textContent = art.title + ' — Tejiendo Historia';
+            document.getElementById('page-desc').content = art.title + '. Artículo de Manuel Aguilera Povedano.';
+
+            const catLabel = CAT_LABELS[art.categoria] || art.categoria;
+
+            root.innerHTML = `
+                <div class="breadcrumb-bar">
+                    <div class="breadcrumb-inner">
+                        <nav class="breadcrumb" aria-label="Migas de pan">
+                            <a href="index.html">Inicio</a>
+                            <span>›</span>
+                            <a href="articulos.html">Artículos</a>
+                            <span>›</span>
+                            <span style="color:rgba(255,255,255,0.7);">${art.title}</span>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="articulo-header">
+                    <div class="articulo-header-inner">
+                        <span class="articulo-cat">${catLabel}</span>
+                        <h1 class="articulo-titulo">${art.title}</h1>
+                        <div class="articulo-meta">
+                            <span class="articulo-fecha">${art.date}</span>
+                            ${art.url ? `<a href="${art.url}" target="_blank" rel="noopener noreferrer" class="articulo-wp-link">Ver en WordPress ↗</a>` : ''}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="articulo-body-wrap">
+                    <article class="articulo-body">
+                        ${art.content}
+                    </article>
+                </div>
+
+                <div class="articulo-footer-nav">
+                    <a href="articulos.html" class="btn-back">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                        Volver a artículos
+                    </a>
+                    ${art.url ? `<a href="${art.url}" target="_blank" rel="noopener noreferrer" class="btn-wp">Artículo original en WordPress ↗</a>` : ''}
+                </div>
+            `;
+        }
+    }
+</script>
+</body>
+</html>

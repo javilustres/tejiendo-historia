@@ -1,0 +1,14 @@
+# robots.txt — Tejiendo Historia | Manuel Aguilera Povedano
+# https://manuelaguilerapovedano.wordpress.com/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://manuelaguilerapovedano.wordpress.com/sitemap.xml
+
+# Crawl-delay (cortesía con rastreadores)
+Crawl-delay: 10
+
+# Bloquear directorios de assets si no se desea indexar
+Disallow: /assets/

@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tejiendo Historia — Manuel Aguilera Povedano</title>
+    <meta name="description" content="Blog de periodismo histórico de Manuel Aguilera Povedano. Guerra Civil Española, Mallorca, Batalla de Mallorca, Desembarco de Bayo." />
+    <meta name="keywords" content="Guerra Civil Española, Batalla de Mallorca, Desembarco de Bayo, Manuel Aguilera Povedano, Mallorca, Baleares, periodismo histórico, El oro de Mussolini" />
+    <meta name="author" content="Manuel Aguilera Povedano" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://manuelaguilerapovedano.wordpress.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://manuelaguilerapovedano.wordpress.com/" />
+    <meta property="og:title" content="Tejiendo Historia — Manuel Aguilera Povedano" />
+    <meta property="og:description" content="Blog de periodismo histórico sobre la Guerra Civil Española, la Batalla de Mallorca y la memoria de Baleares." />
+    <meta property="og:image" content="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2016/12/cropped-lienzo-uhp-19-de-julio-1936.jpg" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Tejiendo Historia" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Maguilera_" />
+    <meta name="twitter:creator" content="@Maguilera_" />
+    <meta name="twitter:title" content="Tejiendo Historia — Manuel Aguilera Povedano" />
+    <meta name="twitter:description" content="Periodismo histórico sobre la Guerra Civil Española y Mallorca." />
+    <meta name="twitter:image" content="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2016/12/cropped-lienzo-uhp-19-de-julio-1936.jpg" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Tejiendo Historia",
+      "description": "Blog de periodismo histórico de Manuel Aguilera Povedano sobre la Guerra Civil Española y Mallorca.",
+      "url": "https://manuelaguilerapovedano.wordpress.com/",
+      "author": {
+        "@type": "Person",
+        "name": "Manuel Aguilera Povedano",
+        "email": "manuelaguilerapovedano@gmail.com",
+        "sameAs": ["https://x.com/Maguilera_", "https://manuelaguilerapovedano.wordpress.com/"]
+      },
+      "inLanguage": "es",
+      "publisher": {
+        "@type": "Person",
+        "name": "Manuel Aguilera Povedano"
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --color-primary: #1B3A5C;
+            --color-secondary: #8B2020;
+            --color-accent: #beddf8;
+            --color-dark: #100f0f;
+            --color-text: #2a2a2a;
+            --color-muted: #6b6b6b;
+            --color-bg: #f9f7f3;
+            --color-bg-dark: #0e1a26;
+            --color-white: #ffffff;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Source Serif 4', Georgia, serif;
+            --radius: 4px;
+            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+            --shadow-hover: 0 8px 40px rgba(0,0,0,0.14);
+            --transition: all 0.3s ease;
+            --max-width: 1100px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--color-text);
+            background: var(--color-bg);
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* ─── HEADER ─── */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(14, 26, 38, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(190, 221, 248, 0.15);
+            transition: var(--transition);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+        }
+
+        .site-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .site-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+        }
+
+        .logo-text .name {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--color-white);
+            letter-spacing: 0.02em;
+        }
+
+        .logo-text .tagline {
+            font-size: 11px;
+            color: var(--color-accent);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .site-nav {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .site-nav a {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.82);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .site-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--color-accent);
+            transition: var(--transition);
+        }
+
+        .site-nav a:hover { color: var(--color-accent); }
+        .site-nav a:hover::after { width: 100%; }
+
+        .nav-cta {
+            background: var(--color-secondary) !important;
+            color: var(--color-white) !important;
+            padding: 10px 22px;
+            border-radius: var(--radius);
+            text-transform: uppercase !important;
+            font-size: 13px !important;
+            letter-spacing: 0.06em !important;
+            transition: var(--transition) !important;
+        }
+
+        .nav-cta:hover {
+            background: #a02828 !important;
+            transform: translateY(-1px);
+        }
+
+        .nav-cta::after { display: none !important; }
+
+        /* Hamburger */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--color-white);
+            transition: var(--transition);
+        }
+
+        /* ─── HERO con ScrollyVideo ─── */
+        <!--SCROLL-VIDEO-SECTION-->
+        .hero-scrolly-wrap {
+            position: relative;
+            height: 300vh;
+        }
+
+        /* La librería gestiona position:sticky, height:100vh y overflow:hidden en #scrolly-video */
+        #scrolly-video video,
+        #scrolly-video canvas {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
+        }
+
+        /* Capa UI (overlay + texto + scroll hint) pegada encima del vídeo */
+        .hero-ui {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            /* margen negativo para que solape con #scrolly-video sin ocupar espacio extra */
+            margin-top: -100vh;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .hero-ui .hero-actions a,
+        .hero-ui .hero-actions button {
+            pointer-events: auto;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(14, 26, 38, 0.72) 0%,
+                rgba(139, 32, 32, 0.30) 100%
+            );
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+            width: 100%;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 20px;
+            border-left: 2px solid var(--color-secondary);
+            padding-left: 12px;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 6vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            color: var(--color-white);
+            margin-bottom: 20px;
+            max-width: 760px;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--color-accent);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-weight: 300;
+            color: rgba(255,255,255,0.88);
+            max-width: 560px;
+            margin-bottom: 44px;
+            line-height: 1.65;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border-radius: var(--radius);
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--color-secondary);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background: #a02828;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(139, 32, 32, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-white);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--color-white);
+            transform: translateY(-2px);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 36px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.5);
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.5; transform: scaleY(1); }
+            50% { opacity: 1; transform: scaleY(1.1); }
+        }
+
+        /* ─── SECTIONS ─── */
+        section {
+            padding: 100px 24px;
+        }
+
+        .section-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--color-secondary);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 700;
+            color: var(--color-dark);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-muted);
+            max-width: 580px;
+            line-height: 1.7;
+            margin-bottom: 60px;
+        }
+
+        /* ─── POR QUÉ ─── */
+        .por-que {
+            background: var(--color-white);
+        }
+
+        .virtudes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .virtud-item {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 40px 32px;
+            border-radius: var(--radius);
+            border: 1px solid rgba(0,0,0,0.07);
+            background: var(--color-bg);
+            transition: var(--transition);
+        }
+
+        .virtud-item:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+            border-color: var(--color-accent);
+        }
+
+        .virtud-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .virtud-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--color-accent);
+        }
+
+        .virtud-title {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-dark);
+        }
+
+        .virtud-desc {
+            font-size: 0.96rem;
+            color: var(--color-muted);
+            line-height: 1.7;
+        }
+
+        /* ─── LIBROS ─── */
+        .libros {
+            background: var(--color-bg);
+        }
+
+        .libros-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+
+        .libro-card {
+            background: var(--color-white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .libro-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-6px);
+        }
+
+        .libro-cover {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            background: var(--color-primary);
+        }
+
+        .libro-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .libro-year {
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-secondary);
+            font-weight: 400;
+        }
+
+        .libro-title {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--color-dark);
+            line-height: 1.35;
+        }
+
+        .libro-desc {
+            font-size: 0.88rem;
+            color: var(--color-muted);
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .libro-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--color-secondary);
+            margin-top: 8px;
+            transition: var(--transition);
+        }
+
+        .libro-link:hover { color: #a02828; gap: 10px; }
+
+        /* ─── NÚMEROS ─── */
+        .numeros {
+            background: var(--color-bg-dark);
+            color: var(--color-white);
+        }
+
+        .numeros .section-title { color: var(--color-white); }
+        .numeros .section-subtitle { color: rgba(255,255,255,0.65); }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+        }
+
+        .stat-item {
+            padding: 48px 40px;
+            text-align: center;
+            background: rgba(255,255,255,0.04);
+            border-right: 1px solid rgba(255,255,255,0.08);
+            transition: var(--transition);
+        }
+
+        .stat-item:last-child { border-right: none; }
+
+        .stat-item:hover {
+            background: rgba(190, 221, 248, 0.06);
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            font-weight: 700;
+            color: var(--color-accent);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.55);
+        }
+
+        /* ─── ÚLTIMAS ENTRADAS ─── */
+        .entradas {
+            background: var(--color-white);
+        }
+
+        .entradas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .entrada-card {
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.07);
+            background: var(--color-bg);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .entrada-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        .entrada-img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        .entrada-body {
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .entrada-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .entrada-cat {
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-secondary);
+            font-weight: 400;
+            background: rgba(139,32,32,0.08);
+            padding: 4px 10px;
+            border-radius: 2px;
+        }
+
+        .entrada-date {
+            font-size: 12px;
+            color: var(--color-muted);
+        }
+
+        .entrada-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-dark);
+            line-height: 1.4;
+        }
+
+        .entrada-excerpt {
+            font-size: 0.92rem;
+            color: var(--color-muted);
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .entrada-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            margin-top: 4px;
+            transition: var(--transition);
+        }
+
+        .entrada-link:hover { color: var(--color-secondary); gap: 10px; }
+
+        /* ─── CTA FINAL ─── */
+        .cta-final {
+            background: var(--color-primary);
+            text-align: center;
+        }
+
+        .cta-final .section-label { color: var(--color-accent); }
+
+        .cta-final .section-title { color: var(--color-white); }
+
+        .cta-final p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 560px;
+            margin: 0 auto 48px;
+            line-height: 1.7;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-light {
+            background: var(--color-white);
+            color: var(--color-primary);
+        }
+
+        .btn-light:hover {
+            background: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        /* ─── FOOTER ─── */
+        .site-footer {
+            background: var(--color-bg-dark);
+            color: rgba(255,255,255,0.7);
+            padding: 60px 24px 32px;
+        }
+
+        .footer-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-brand .logo-text .name { font-size: 18px; }
+
+        .footer-brand p {
+            margin-top: 16px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.55);
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-white);
+            margin-bottom: 20px;
+            letter-spacing: 0.04em;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col ul li a {
+            font-size: 14px;
+            color: rgba(255,255,255,0.55);
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover { color: var(--color-accent); }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-copy {
+            font-size: 13px;
+            color: rgba(255,255,255,0.35);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            border-color: var(--color-accent);
+            background: rgba(190, 221, 248, 0.1);
+        }
+
+        .footer-social svg {
+            width: 16px;
+            height: 16px;
+            fill: rgba(255,255,255,0.6);
+        }
+
+        /* ─── MOBILE NAV ─── */
+        @media (max-width: 900px) {
+            .site-nav {
+                position: fixed;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: rgba(14, 26, 38, 0.98);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 24px;
+                gap: 20px;
+                transform: translateY(-110%);
+                transition: var(--transition);
+                border-bottom: 1px solid rgba(255,255,255,0.08);
+            }
+
+            .site-nav.open { transform: translateY(0); }
+
+            .nav-toggle { display: flex; }
+
+            .virtudes-grid { grid-template-columns: 1fr; }
+
+            .libros-grid { grid-template-columns: repeat(2, 1fr); }
+
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+            .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+            .entradas-grid { grid-template-columns: 1fr; }
+
+            .footer-top { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        @media (max-width: 600px) {
+            section { padding: 72px 20px; }
+            .libros-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .hero-actions { flex-direction: column; }
+            .btn { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ─── HEADER ─── -->
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="site-logo">
+            <img src="assets/logo.png" alt="Tejiendo Historia" />
+            <div class="logo-text">
+                <span class="name">Tejiendo Historia</span>
+                <span class="tagline">Periodismo histórico</span>
+            </div>
+        </a>
+        <nav class="site-nav" id="site-nav">
+            <a href="index.html">Inicio</a>
+            <a href="articulos.html">Artículos</a>
+            <a href="servicios.html">Publicaciones</a>
+            <a href="nosotros.html">Sobre mí</a>
+            <a href="contacto.html" class="nav-cta">Contacto</a>
+        </nav>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<!-- ─── HERO con ScrollyVideo ─── -->
+<!--SCROLL-VIDEO-SECTION-->
+<div class="hero-scrolly-wrap">
+    <!-- Contenedor del vídeo: la librería lo hace sticky y lo rellena -->
+    <div id="scrolly-video"></div>
+
+    <!-- UI superpuesta: overlay de gradiente + texto + hint de scroll -->
+    <div class="hero-ui">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-eyebrow">Manuel Aguilera Povedano</span>
+            <h1 class="hero-title">Tejiendo<br><em>Historia</em></h1>
+            <p class="hero-subtitle">
+                Periodismo histórico sobre la Guerra Civil Española, la Batalla de Mallorca
+                y la memoria olvidada de Baleares.
+            </p>
+            <div class="hero-actions">
+                <a href="articulos.html" class="btn btn-primary">Explorar artículos</a>
+                <a href="servicios.html" class="btn btn-outline">Publicaciones</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+            <span>Descubrir</span>
+        </div>
+    </div>
+</div>
+
+<!-- ─── POR QUÉ ─── -->
+<section class="por-que">
+    <div class="section-inner">
+        <span class="section-label">Por qué este blog</span>
+        <h2 class="section-title">Historia documentada,<br>no historia inventada</h2>
+        <p class="section-subtitle">Un periodista con vocación de historiador, en busca de los hechos que los archivos guardan y la memoria popular olvida.</p>
+        <div class="virtudes-grid">
+            <div class="virtud-item">
+                <div class="virtud-icon">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+                </div>
+                <h3 class="virtud-title">Investigación documental rigurosa</h3>
+                <p class="virtud-desc">Cada artículo parte de fuentes primarias: archivos militares, registros civiles, documentos inéditos de la Guerra Civil Española en Mallorca y Baleares.</p>
+            </div>
+            <div class="virtud-item">
+                <div class="virtud-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                </div>
+                <h3 class="virtud-title">Presencia en medios</h3>
+                <p class="virtud-desc">Con apariciones en IB3 Televisión, entrevistas en revistas italianas como <em>Cronaca Vera</em> y publicaciones académicas de la Universidad Complutense de Madrid.</p>
+            </div>
+            <div class="virtud-item">
+                <div class="virtud-icon">
+                    <svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm2 4v10h10V7H7zm2 2h6v2H9V9zm0 4h6v2H9v-2z"/></svg>
+                </div>
+                <h3 class="virtud-title">Obra publicada en tres idiomas</h3>
+                <p class="virtud-desc">Con libros editados en español e italiano, audiolibros disponibles en Storytel, Google Play y Amazon, y capítulos en obras colectivas de referencia.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── LIBROS ─── -->
+<section class="libros">
+    <div class="section-inner">
+        <span class="section-label">Bibliografía</span>
+        <h2 class="section-title">Libros publicados</h2>
+        <p class="section-subtitle">Obras de investigación histórica sobre la Guerra Civil Española, disponibles en librerías y plataformas digitales.</p>
+        <div class="libros-grid">
+            <div class="libro-card">
+                <img class="libro-cover"
+                    src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2022/07/cubierta_oro_mussolini_final_3edic.jpg?w=400"
+                    alt="Portada de El oro de Mussolini"
+                    loading="lazy" />
+                <div class="libro-body">
+                    <span class="libro-year">2022 · 3ª edición</span>
+                    <h3 class="libro-title">El oro de Mussolini</h3>
+                    <p class="libro-desc">Cómo la República española planeó vender parte de su territorio al fascismo italiano. Bestseller de Historia, también publicado en italiano.</p>
+                    <a href="https://amzn.eu/d/01DAy9FB" target="_blank" rel="noopener" class="libro-link">
+                        Ver en Amazon →
+                    </a>
+                </div>
+            </div>
+            <div class="libro-card">
+                <img class="libro-cover"
+                    src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2023/07/cover_occasione-oro-di-mussolini_bozza.png?w=400"
+                    alt="Un'occasione d'oro per Mussolini"
+                    loading="lazy" />
+                <div class="libro-body">
+                    <span class="libro-year">2023 · Edición italiana</span>
+                    <h3 class="libro-title">Un'occasione d'oro per Mussolini</h3>
+                    <p class="libro-desc">Versión italiana de <em>El oro de Mussolini</em>, publicado por Mondadori. La historia ha inspirado la novela <em>Invasione Silenziosa</em> de Andrea Carlo Cappi.</p>
+                    <a href="https://www.mondadoristore.it/Un-occasione-d-oro-per-Mussolini-Quando-la-Repubblica-Spagnola-pianifico-di-vendere-parte-del-suo-territorio-al-fascismo-Manuel-Aguilera-Povedano/eai978889492671/" target="_blank" rel="noopener" class="libro-link">
+                        Ver en Mondadori →
+                    </a>
+                </div>
+            </div>
+            <div class="libro-card">
+                <img class="libro-cover"
+                    src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2017/04/manuel-aguilera-gafim-un-periodista-en-el-desembarco-bayo.jpg?w=400"
+                    alt="Un periodista en el desembarco de Bayo"
+                    loading="lazy" />
+                <div class="libro-body">
+                    <span class="libro-year">2017</span>
+                    <h3 class="libro-title">Un periodista en el desembarco de Bayo</h3>
+                    <p class="libro-desc">Gafim y la guerra civil en Mallorca. La historia del corresponsal que vivió el desembarco republicano de 1936 en primera persona.</p>
+                    <a href="https://www.lleonardmuntanereditor.cat/producte/un-periodista-en-el-desembarco-de-bayo-gafim-y-la-guerra-civil-en-mallorca/" target="_blank" rel="noopener" class="libro-link">
+                        Ver en editorial →
+                    </a>
+                </div>
+            </div>
+            <div class="libro-card">
+                <img class="libro-cover"
+                    src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2017/02/compancc83eros-y-camaradas.jpg?w=400"
+                    alt="Compañeros y camaradas"
+                    loading="lazy" />
+                <div class="libro-body">
+                    <span class="libro-year">2017</span>
+                    <h3 class="libro-title">Compañeros y camaradas</h3>
+                    <p class="libro-desc">Las luchas entre antifascistas durante la Guerra Civil Española. Un análisis de los enfrentamientos internos en el bando republicano.</p>
+                    <a href="https://amzn.eu/d/0OMOCzD" target="_blank" rel="noopener" class="libro-link">
+                        Ver en Amazon →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── NÚMEROS ─── -->
+<section class="numeros">
+    <div class="section-inner">
+        <span class="section-label">En cifras</span>
+        <h2 class="section-title">La investigación, en números</h2>
+        <p class="section-subtitle">Años de trabajo documental destilados en artículos, libros y presencias públicas.</p>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">+196</div>
+                <div class="stat-label">Artículos sobre la GCE</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">+148</div>
+                <div class="stat-label">Artículos sobre Mallorca</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Libros publicados</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Idiomas de publicación</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── ÚLTIMAS ENTRADAS ─── -->
+<section class="entradas">
+    <div class="section-inner">
+        <span class="section-label">Últimas entradas</span>
+        <h2 class="section-title">Lo más reciente</h2>
+        <p class="section-subtitle">Artículos de investigación, noticias y nuevos hallazgos documentales.</p>
+        <div class="entradas-grid">
+            <article class="entrada-card">
+                <img class="entrada-img"
+                    src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2026/02/andrea-carlo-cappi-invasione-silenziosa.jpg?w=731"
+                    alt="Novela histórica en Italia basada en El oro de Mussolini"
+                    loading="lazy" />
+                <div class="entrada-body">
+                    <div class="entrada-meta">
+                        <span class="entrada-cat">Historia</span>
+                        <span class="entrada-date">5 feb 2026</span>
+                    </div>
+                    <h3 class="entrada-title">Publican una novela histórica en Italia basada en 'El oro de Mussolini'</h3>
+                    <p class="entrada-excerpt">El escritor italiano Andrea Carlo Cappi ha publicado <em>Invasione Silenziosa</em>, una novela de espías inspirada en la compra secreta de fincas en Mallorca por parte de Mussolini.</p>
+                    <a href="https://manuelaguilerapovedano.wordpress.com/2026/02/05/publican-una-novela-historica-en-italia-basada-en-el-oro-de-mussolini/" target="_blank" rel="noopener" class="entrada-link">Leer artículo →</a>
+                </div>
+            </article>
+            <article class="entrada-card">
+                <img class="entrada-img"
+                    src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2025/08/soldados-en-la-batalla-de-mallorca.-biblioteca-nacional-de-espana.jpg?w=1024"
+                    alt="Soldados en la Batalla de Mallorca"
+                    loading="lazy" />
+                <div class="entrada-body">
+                    <div class="entrada-meta">
+                        <span class="entrada-cat">Historia</span>
+                        <span class="entrada-date">21 ago 2025</span>
+                    </div>
+                    <h3 class="entrada-title">Lista de desaparecidos del bando sublevado en la Batalla de Mallorca</h3>
+                    <p class="entrada-excerpt">Los 34 desaparecidos del bando sublevado durante la Batalla de Mallorca de agosto-septiembre de 1936, con datos biográficos y fuentes documentales.</p>
+                    <a href="https://manuelaguilerapovedano.wordpress.com/2025/08/21/lista-de-desaparecidos-del-bando-sublevado-en-la-batalla-de-mallorca/" target="_blank" rel="noopener" class="entrada-link">Leer artículo →</a>
+                </div>
+            </article>
+            <article class="entrada-card">
+                <img class="entrada-img"
+                    src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2025/04/img_9819-1-1.jpg?w=1024"
+                    alt="Bombardeo de Palma"
+                    loading="lazy" />
+                <div class="entrada-body">
+                    <div class="entrada-meta">
+                        <span class="entrada-cat">Historia</span>
+                        <span class="entrada-date">24 abr 2025</span>
+                    </div>
+                    <h3 class="entrada-title">Busco familiares de víctimas de los bombardeos de Mallorca</h3>
+                    <p class="entrada-excerpt">Investigación en curso sobre las víctimas civiles de los bombardeos fascistas en Mallorca durante la Guerra Civil. Si tienes un familiar, escríbeme.</p>
+                    <a href="https://manuelaguilerapovedano.wordpress.com/2025/04/24/busco-familiares-de-victimas-de-los-bombardeos-de-mallorca/" target="_blank" rel="noopener" class="entrada-link">Leer artículo →</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ─── CTA FINAL ─── -->
+<section class="cta-final">
+    <div class="section-inner" style="text-align:center;">
+        <span class="section-label">Colabora</span>
+        <h2 class="section-title" style="color:var(--color-white); margin-bottom: 20px;">¿Tienes información<br>sobre la Guerra Civil?</h2>
+        <p>Si tienes documentos, fotografías o historia familiar relacionada con la Guerra Civil en Mallorca o Baleares, me encantaría conocerla. Toda información es bienvenida para la investigación.</p>
+        <div class="cta-actions">
+            <a href="contacto.html" class="btn btn-light">Escribirme ahora</a>
+            <a href="servicios.html" class="btn btn-outline">Ver publicaciones</a>
+        </div>
+    </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="site-logo" style="margin-bottom: 0;">
+                    <img src="assets/logo.png" alt="Tejiendo Historia" style="height:36px;" />
+                    <div class="logo-text">
+                        <span class="name">Tejiendo Historia</span>
+                        <span class="tagline">Periodismo histórico</span>
+                    </div>
+                </div>
+                <p>Blog de periodismo e investigación histórica de Manuel Aguilera Povedano, especializado en la Guerra Civil Española y su memoria en Mallorca y Baleares.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Publicaciones</a></li>
+                    <li><a href="nosotros.html">Sobre mí</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Secciones</h4>
+                <ul>
+                    <li><a href="https://manuelaguilerapovedano.wordpress.com/category/historia/" target="_blank" rel="noopener">Periodismo histórico</a></li>
+                    <li><a href="https://manuelaguilerapovedano.wordpress.com/category/opinion/" target="_blank" rel="noopener">Artículos de opinión</a></li>
+                    <li><a href="https://manuelaguilerapovedano.wordpress.com/category/articulos-academicos/" target="_blank" rel="noopener">Artículos académicos</a></li>
+                    <li><a href="https://manuelaguilerapovedano.wordpress.com/otros-articulos/" target="_blank" rel="noopener">Otros artículos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copy">© 2026 Manuel Aguilera Povedano · Tejiendo Historia · Todos los derechos reservados</p>
+            <div class="footer-social">
+                <a href="https://x.com/Maguilera_" target="_blank" rel="noopener" title="Twitter / X">
+                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="mailto:manuelaguilerapovedano@gmail.com" title="Email">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+    document.querySelectorAll('.site-nav a').forEach(a => {
+        a.addEventListener('click', () => nav.classList.remove('open'));
+    });
+</script>
+
+<!-- ScrollyVideo: vídeo hero controlado por scroll -->
+<script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js"></script>
+<script>
+    new ScrollyVideo({
+        scrollyVideoContainer: "scrolly-video",
+        src: "assets/hero.mp4",
+        cover: true,
+        sticky: true,      /* la librería pone position:sticky al contenedor */
+        full: true,        /* la librería pone height:100vh y overflow:hidden */
+        trackScroll: true,
+        lockScroll: false, /* permite actualizar el frame en cada evento scroll */
+        transitionSpeed: 4,
+        frameThreshold: 0.02,
+        useWebCodecs: false
+    });
+</script>
+</body>
+</html>

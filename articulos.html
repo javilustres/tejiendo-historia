@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artículos — Tejiendo Historia | Manuel Aguilera Povedano</title>
+    <meta name="description" content="Todos los artículos de Manuel Aguilera Povedano: periodismo histórico, artículos académicos y opinión sobre la Guerra Civil Española y Mallorca." />
+    <meta name="keywords" content="Guerra Civil Española, Batalla de Mallorca, Desembarco de Bayo, bombardeos, Manuel Aguilera Povedano, artículos históricos" />
+    <meta name="author" content="Manuel Aguilera Povedano" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Artículos — Tejiendo Historia" />
+    <meta property="og:description" content="Periodismo histórico, artículos académicos y de opinión sobre la Guerra Civil Española y Mallorca." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@Maguilera_" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --color-primary: #1B3A5C;
+            --color-secondary: #8B2020;
+            --color-accent: #beddf8;
+            --color-dark: #100f0f;
+            --color-text: #2a2a2a;
+            --color-muted: #6b6b6b;
+            --color-bg: #f9f7f3;
+            --color-bg-dark: #0e1a26;
+            --color-white: #ffffff;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Source Serif 4', Georgia, serif;
+            --radius: 4px;
+            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+            --shadow-hover: 0 8px 40px rgba(0,0,0,0.14);
+            --transition: all 0.3s ease;
+            --max-width: 1100px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); font-size: 18px; line-height: 1.7; color: var(--color-text); background: var(--color-bg); }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+
+        /* ─── HEADER ─── */
+        .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(14,26,38,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(190,221,248,0.15); }
+        .header-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+        .site-logo { display: flex; align-items: center; gap: 12px; }
+        .site-logo img { height: 40px; width: auto; }
+        .logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+        .logo-text .name { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--color-white); }
+        .logo-text .tagline { font-size: 11px; color: var(--color-accent); letter-spacing: 0.12em; text-transform: uppercase; }
+        .site-nav { display: flex; align-items: center; gap: 32px; }
+        .site-nav a { font-size: 14px; color: rgba(255,255,255,0.82); letter-spacing: 0.05em; text-transform: uppercase; transition: var(--transition); position: relative; }
+        .site-nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--color-accent); transition: var(--transition); }
+        .site-nav a:hover { color: var(--color-accent); }
+        .site-nav a:hover::after, .site-nav a.active::after { width: 100%; }
+        .site-nav a.active { color: var(--color-accent); }
+        .nav-cta { background: var(--color-secondary) !important; color: var(--color-white) !important; padding: 10px 22px; border-radius: var(--radius); }
+        .nav-cta:hover { background: #a02828 !important; }
+        .nav-cta::after { display: none !important; }
+        .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+        .nav-toggle span { width: 24px; height: 2px; background: var(--color-white); }
+
+        /* ─── PAGE HERO ─── */
+        .page-hero { background: var(--color-bg-dark); padding: 130px 24px 72px; }
+        .page-hero-inner { max-width: var(--max-width); margin: 0 auto; }
+        .page-label { display: inline-block; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 20px; border-left: 2px solid var(--color-secondary); padding-left: 12px; }
+        .page-title { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: var(--color-white); line-height: 1.1; margin-bottom: 16px; }
+        .page-desc { font-size: 1.1rem; color: rgba(255,255,255,0.7); max-width: 580px; line-height: 1.7; }
+
+        /* ─── FILTROS ─── */
+        .filtros-bar {
+            background: var(--color-white);
+            border-bottom: 1px solid rgba(0,0,0,0.07);
+            position: sticky;
+            top: 68px;
+            z-index: 50;
+        }
+        .filtros-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            gap: 4px;
+            overflow-x: auto;
+        }
+        .filtro-btn {
+            padding: 18px 24px;
+            font-family: var(--font-body);
+            font-size: 13px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+        .filtro-btn:hover { color: var(--color-dark); }
+        .filtro-btn.active { color: var(--color-secondary); border-bottom-color: var(--color-secondary); }
+
+        /* ─── ARTÍCULOS ─── */
+        .articulos-section { padding: 64px 24px 100px; }
+        .articulos-inner { max-width: var(--max-width); margin: 0 auto; }
+
+        .categoria-bloque { margin-bottom: 80px; }
+        .categoria-bloque:last-child { margin-bottom: 0; }
+
+        .cat-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 36px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        .cat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .cat-icon svg { width: 22px; height: 22px; fill: var(--color-white); }
+        .cat-icon.historia { background: var(--color-primary); }
+        .cat-icon.academicos { background: var(--color-secondary); }
+        .cat-icon.opinion { background: #4a7a6a; }
+        .cat-title-wrap h2 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--color-dark);
+            line-height: 1.2;
+        }
+        .cat-title-wrap span {
+            font-size: 13px;
+            color: var(--color-muted);
+            letter-spacing: 0.05em;
+        }
+        .cat-count {
+            margin-left: auto;
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: rgba(0,0,0,0.08);
+        }
+
+        /* Grid de artículos */
+        .articulos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .articulo-card {
+            background: var(--color-white);
+            border-radius: var(--radius);
+            border: 1px solid rgba(0,0,0,0.07);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+        .articulo-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+        .articulo-card-img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            background: rgba(27,58,92,0.08);
+        }
+        .articulo-card-img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, rgba(27,58,92,0.12), rgba(139,32,32,0.08));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .articulo-card-img-placeholder svg { width: 40px; height: 40px; opacity: 0.25; fill: var(--color-primary); }
+        .articulo-card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
+        }
+        .articulo-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .articulo-cat {
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 3px 9px;
+            border-radius: 2px;
+            font-weight: 400;
+        }
+        .articulo-cat.historia { background: rgba(27,58,92,0.1); color: var(--color-primary); }
+        .articulo-cat.academicos { background: rgba(139,32,32,0.1); color: var(--color-secondary); }
+        .articulo-cat.opinion { background: rgba(74,122,106,0.1); color: #4a7a6a; }
+        .articulo-date { font-size: 12px; color: var(--color-muted); }
+        .articulo-title {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--color-dark);
+            line-height: 1.4;
+            flex: 1;
+        }
+        .articulo-excerpt {
+            font-size: 0.88rem;
+            color: var(--color-muted);
+            line-height: 1.65;
+        }
+        .articulo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            margin-top: 4px;
+            transition: var(--transition);
+        }
+        .articulo-card.academicos .articulo-link { color: var(--color-secondary); }
+        .articulo-card.opinion .articulo-link { color: #4a7a6a; }
+        .articulo-link:hover { gap: 10px; }
+
+        /* Card "Ver más" */
+        .card-ver-mas {
+            background: var(--color-bg-dark);
+            border: 1px solid rgba(190,221,248,0.12);
+            border-radius: var(--radius);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            padding: 40px 24px;
+            text-align: center;
+            transition: var(--transition);
+            text-decoration: none;
+            min-height: 200px;
+        }
+        .card-ver-mas:hover { border-color: var(--color-accent); transform: translateY(-4px); }
+        .card-ver-mas-icon { width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(190,221,248,0.25); display: flex; align-items: center; justify-content: center; }
+        .card-ver-mas-icon svg { width: 20px; height: 20px; fill: var(--color-accent); }
+        .card-ver-mas p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+        .card-ver-mas strong { font-family: var(--font-display); font-size: 1rem; color: var(--color-white); font-weight: 600; }
+
+        /* ─── FOOTER ─── */
+        .site-footer { background: var(--color-bg-dark); color: rgba(255,255,255,0.7); padding: 60px 24px 32px; }
+        .footer-inner { max-width: var(--max-width); margin: 0 auto; }
+        .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 60px; margin-bottom: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .footer-brand p { margin-top: 16px; font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.55); }
+        .footer-col h4 { font-family: var(--font-display); font-size: 14px; font-weight: 600; color: var(--color-white); margin-bottom: 20px; }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .footer-col ul li a { font-size: 14px; color: rgba(255,255,255,0.55); transition: var(--transition); }
+        .footer-col ul li a:hover { color: var(--color-accent); }
+        .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+        .footer-copy { font-size: 13px; color: rgba(255,255,255,0.35); }
+        .footer-social { display: flex; gap: 16px; }
+        .footer-social a { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+        .footer-social a:hover { border-color: var(--color-accent); }
+        .footer-social svg { width: 16px; height: 16px; fill: rgba(255,255,255,0.6); }
+
+        @media (max-width: 900px) {
+            .site-nav { position: fixed; top: 68px; left: 0; right: 0; background: rgba(14,26,38,0.98); flex-direction: column; align-items: flex-start; padding: 24px; gap: 20px; transform: translateY(-110%); transition: var(--transition); }
+            .site-nav.open { transform: translateY(0); }
+            .nav-toggle { display: flex; }
+            .articulos-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-top { grid-template-columns: 1fr; gap: 40px; }
+        }
+        @media (max-width: 600px) {
+            .articulos-grid { grid-template-columns: 1fr; }
+            .articulos-section { padding: 48px 20px 80px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="site-logo">
+            <img src="assets/logo.png" alt="Tejiendo Historia" />
+            <div class="logo-text">
+                <span class="name">Tejiendo Historia</span>
+                <span class="tagline">Periodismo histórico</span>
+            </div>
+        </a>
+        <nav class="site-nav" id="site-nav">
+            <a href="index.html">Inicio</a>
+            <a href="servicios.html">Publicaciones</a>
+            <a href="articulos.html" class="active">Artículos</a>
+            <a href="nosotros.html">Sobre mí</a>
+            <a href="contacto.html" class="nav-cta">Contacto</a>
+        </nav>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<div class="page-hero">
+    <div class="page-hero-inner">
+        <span class="page-label">Blog completo</span>
+        <h1 class="page-title">Artículos</h1>
+        <p class="page-desc">Periodismo histórico, artículos académicos y de opinión sobre la Guerra Civil Española, Mallorca y la memoria de Baleares.</p>
+    </div>
+</div>
+
+<!-- ─── FILTROS ─── -->
+<div class="filtros-bar">
+    <div class="filtros-inner">
+        <button class="filtro-btn active" data-cat="todos">Todos</button>
+        <button class="filtro-btn" data-cat="historia">Periodismo histórico</button>
+        <button class="filtro-btn" data-cat="academicos">Artículos académicos</button>
+        <button class="filtro-btn" data-cat="opinion">Opinión</button>
+    </div>
+</div>
+
+<!-- ─── ARTÍCULOS ─── -->
+<section class="articulos-section">
+    <div class="articulos-inner">
+
+        <!-- ═══════════════════════════════════════════════════ -->
+        <!-- PERIODISMO HISTÓRICO -->
+        <!-- ═══════════════════════════════════════════════════ -->
+        <div class="categoria-bloque" data-bloque="historia">
+            <div class="cat-header">
+                <div class="cat-icon historia">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+                </div>
+                <div class="cat-title-wrap">
+                    <h2>Periodismo histórico</h2>
+                    <span>Investigación documental sobre la Guerra Civil Española y Mallorca</span>
+                </div>
+                <span class="cat-count">+196</span>
+            </div>
+            <div class="articulos-grid">
+
+                <!-- 1 -->
+                <article class="articulo-card">
+                    <a href="articulo.html?id=5790" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2026/02/andrea-carlo-cappi-invasione-silenziosa.jpg" alt="Invasione Silenziosa" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat historia">Historia</span>
+                            <span class="articulo-date">5 feb 2026</span>
+                        </div>
+                        <h3 class="articulo-title">Publican una novela histórica en Italia basada en 'El oro de Mussolini'</h3>
+                        <p class="articulo-excerpt">El escritor italiano Andrea Carlo Cappi ha publicado una novela de espías titulada <em>Invasione Silenziosa</em> inspirada en la investigación sobre la compra secreta de fincas por Mussolini en Mallorca.</p>
+                        <a href="articulo.html?id=5790" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 2 -->
+                <article class="articulo-card">
+                    <a href="articulo.html?id=5747" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2016/12/cropped-lienzo-uhp-19-de-julio-1936.jpg" alt="Víctimas de los bombardeos" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat historia">Historia</span>
+                            <span class="articulo-date">26 sep 2025</span>
+                        </div>
+                        <h3 class="articulo-title">Víctimas de los bombardeos en Mallorca sin memoria</h3>
+                        <p class="articulo-excerpt">El pueblo de Artà colocará piedras de la memoria con las víctimas del bombardeo fascista italiano de 1936. El resto de víctimas de los bombardeos de Mallorca nunca ha tenido reconocimiento.</p>
+                        <a href="articulo.html?id=5747" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 3 -->
+                <article class="articulo-card">
+                    <a href="articulo.html?id=5733" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2025/08/soldados-en-la-batalla-de-mallorca.-biblioteca-nacional-de-espana.jpg" alt="Soldados en la Batalla de Mallorca" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat historia">Historia</span>
+                            <span class="articulo-date">21 ago 2025</span>
+                        </div>
+                        <h3 class="articulo-title">Lista de desaparecidos del bando sublevado en la Batalla de Mallorca</h3>
+                        <p class="articulo-excerpt">Los 34 desaparecidos del bando sublevado durante la Batalla de Mallorca de agosto–septiembre de 1936: 25 soldados, un sargento y un alférez capturados en la Loma Verde.</p>
+                        <a href="articulo.html?id=5733" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 4 -->
+                <article class="articulo-card">
+                    <a href="articulo.html?id=5727" target="_blank" rel="noopener">
+                        <div class="articulo-card-img-placeholder">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                        </div>
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat historia">Historia</span>
+                            <span class="articulo-date">1 ago 2025</span>
+                        </div>
+                        <h3 class="articulo-title">Busco a los familiares de Juan Sampol Llobera, fallecido en agosto de 1936 en Mallorca</h3>
+                        <p class="articulo-excerpt">Juan Sampol Llobera, herido de muerte en un bombardeo aéreo en la Colònia de Sant Jordi el 6 de agosto de 1936, era un republicano escondido. Se abrió causa judicial contra él.</p>
+                        <a href="articulo.html?id=5727" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 5 -->
+                <article class="articulo-card">
+                    <a href="articulo.html?id=5720" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2025/07/jose-perez-vengut.webp" alt="José Pérez Vengut" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat historia">Historia</span>
+                            <span class="articulo-date">10 jul 2025</span>
+                        </div>
+                        <h3 class="articulo-title">Busco a los descendientes de José Pérez Vengut</h3>
+                        <p class="articulo-excerpt">El capitán legionario José Pérez Vengut, alicantino residente en Mallorca, falleció el 4 de abril de 1938. Su mujer era Francisca Company Albertí. Se busca a sus descendientes.</p>
+                        <a href="articulo.html?id=5720" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 6 -->
+                <article class="articulo-card">
+                    <a href="articulo.html?id=5710" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2025/06/el-bombardeo-de-inca-recreado-con-ia.png" alt="El bombardeo de Inca recreado con IA" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat historia">Historia</span>
+                            <span class="articulo-date">9 jun 2025</span>
+                        </div>
+                        <h3 class="articulo-title">Busco familiares de tres víctimas de la Guerra Civil en Inca</h3>
+                        <p class="articulo-excerpt">Sebastià Llompart Ramis, Antoni Pericàs Garau y Llorenç Sastre Llobera fallecieron el 24 de julio de 1936 en Inca. Fueron los primeros asesinados en los bombardeos aéreos de Mallorca.</p>
+                        <a href="articulo.html?id=5710" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 7 -->
+                <article class="articulo-card">
+                    <a href="articulo.html?id=5700" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2025/05/la-guerra-civil-cabrera.-juan-jose-negreira.png" alt="La Guerra Civil en Cabrera" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat historia">Historia</span>
+                            <span class="articulo-date">28 may 2025</span>
+                        </div>
+                        <h3 class="articulo-title">Prólogo a La Guerra Civil en Cabrera</h3>
+                        <p class="articulo-excerpt">Prólogo al libro de Juan José Negreira Parets sobre la Guerra Civil en Cabrera. Se repasan los mitos que desmonta esta obra sobre la isla mallorquina durante el conflicto.</p>
+                        <a href="articulo.html?id=5700" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 8 -->
+                <article class="articulo-card">
+                    <a href="articulo.html?id=5692" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2025/04/img_9819-1-1.jpg" alt="Bombardeo de Palma 1937" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat historia">Historia</span>
+                            <span class="articulo-date">24 abr 2025</span>
+                        </div>
+                        <h3 class="articulo-title">Busco familiares de víctimas de los bombardeos de Mallorca</h3>
+                        <p class="articulo-excerpt">Si tiene un familiar que sufrió los bombardeos de Mallorca en la Guerra Civil, Manuel Aguilera quiere conocer su historia para un libro sobre las víctimas civiles.</p>
+                        <a href="articulo.html?id=5692" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 9 -->
+                <article class="articulo-card">
+                    <a href="articulo.html?id=5679" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2025/03/aguilera-mallorca-oro-mussolini.png" alt="El oro de Mussolini en Italia" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat historia">Historia</span>
+                            <span class="articulo-date">17 mar 2025</span>
+                        </div>
+                        <h3 class="articulo-title">El oro de Mussolini en Italia</h3>
+                        <p class="articulo-excerpt">La revista italiana <em>Cronaca Vera</em> publica una entrevista sobre <em>Un'occasione d'oro per Mussolini</em>, versión italiana del libro. La historia ha inspirado además una novela.</p>
+                        <a href="articulo.html?id=5679" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 10 -->
+                <article class="articulo-card">
+                    <a href="articulo.html?id=5603" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2024/10/amador-herrero-torres.-miliciano-bayo-mallorca.jpeg" alt="Amador Herrero Torres" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat historia">Historia</span>
+                            <span class="articulo-date">21 oct 2024</span>
+                        </div>
+                        <h3 class="articulo-title">Encontrados los familiares de Amador Herrero Torres</h3>
+                        <p class="articulo-excerpt">Amador Herrero Torres, miliciano de UGT asesinado en 1936 en Mallorca con 33 años. Casado con Josefa Terol Bas, padre de cinco hijos, natural de Jumilla (Murcia).</p>
+                        <a href="articulo.html?id=5603" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 11 -->
+                <article class="articulo-card">
+                    <a href="articulo.html?id=5577" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2024/09/anexo-mapa-nacionalidades-peninsula.-foreign-office.-fo-371-22661-1.png" alt="Mapa Foreign Office" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat historia">Historia</span>
+                            <span class="articulo-date">5 sep 2024</span>
+                        </div>
+                        <h3 class="articulo-title">Roma no paga a traidores</h3>
+                        <p class="articulo-excerpt">PNV y ERC entregaron en 1938 al gobierno británico sendos memorándums calificando a la República de "extremista" y pidiéndola autodeterminación. Los documentos están en el archivo del Foreign Office.</p>
+                        <a href="articulo.html?id=5577" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 12 -->
+                <article class="articulo-card">
+                    <a href="articulo.html?id=5570" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2024/07/torre-son-simonet.-foto-de-camilo-perez.jpg" alt="Torre Son Simonet" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat historia">Historia</span>
+                            <span class="articulo-date">18 jul 2024</span>
+                        </div>
+                        <h3 class="articulo-title">Historias de la 'puta mili' en Son Simonet</h3>
+                        <p class="articulo-excerpt">Una excavadora derribó en 2023 la torre del cuartel de Son Simonet (Palma). Historias del servicio militar en uno de los recintos más emblemáticos de Mallorca.</p>
+                        <a href="articulo.html?id=5570" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 13 -->
+                <article class="articulo-card">
+                    <a href="articulo.html?id=5524" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2024/03/libro-cnt-hechos-de-mayo-barcelona.-culpable-psuc-y-esquerra.png" alt="Hechos de Mayo CNT" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat historia">Historia</span>
+                            <span class="articulo-date">12 mar 2024</span>
+                        </div>
+                        <h3 class="articulo-title">«Los comunistas y Esquerra quieren exterminar a la CNT»</h3>
+                        <p class="articulo-excerpt">El libro editado por la CNT sobre los Hechos de Mayo de 1937 en Barcelona acusa a comunistas y nacionalistas de confabularse con Mussolini para destruir el anarcosindicalismo.</p>
+                        <a href="articulo.html?id=5524" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 14 -->
+                <article class="articulo-card">
+                    <a href="articulo.html?id=5499" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2025/01/branguli.-primeras-milicias-en-mallorca-anverso.jpg" alt="Batalla de Mallorca Bellumartis" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat historia">Historia</span>
+                            <span class="articulo-date">17 ene 2024</span>
+                        </div>
+                        <h3 class="articulo-title">La Batalla de Mallorca en Bellumartis Historia Militar</h3>
+                        <p class="articulo-excerpt">Entrevista en el canal de historia militar Bellumartis sobre la única operación anfibia de la Guerra Civil y la primera gran ofensiva republicana, que acabó en derrota.</p>
+                        <a href="articulo.html?id=5499" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 15 -->
+                <article class="articulo-card">
+                    <a href="articulo.html?id=5396" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2023/10/calle-rodrigo-de-triana-google-2.jpg" alt="Calle Rodrigo de Triana, Sevilla" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat historia">Historia</span>
+                            <span class="articulo-date">31 oct 2023</span>
+                        </div>
+                        <h3 class="articulo-title">El dolor de la Guerra Civil en Sevilla</h3>
+                        <p class="articulo-excerpt">El fotoperiodista Juan José Serrano Gómez inmortalizó a tres izquierdistas muertos en la calle Rodrigo de Triana, Sevilla, justo después del Golpe de Estado de julio de 1936.</p>
+                        <a href="articulo.html?id=5396" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 16 -->
+                <article class="articulo-card">
+                    <a href="articulo.html?id=5388" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2023/10/miravet-guerra1-civil-ahora-1.jpg" alt="Miravet, Batalla del Ebro" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat historia">Historia</span>
+                            <span class="articulo-date">15 oct 2023</span>
+                        </div>
+                        <h3 class="articulo-title">Miravet, la ofensiva republicana en la Batalla del Ebro</h3>
+                        <p class="articulo-excerpt">La fotografía icónica de soldados cruzando el Ebro fue una simulación. La ofensiva comenzó de noche el 25 de julio de 1938 y al día siguiente se escenificó el cruce en Miravet para la prensa internacional.</p>
+                        <a href="articulo.html?id=5388" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 17 -->
+                <article class="articulo-card">
+                    <a href="articulo.html?id=5345" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2023/09/balneario-alceda-cantabria-guerra-civil-cesare-gatti-antes-y-ahora-1.jpg" alt="Balneario de Alceda" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat historia">Historia</span>
+                            <span class="articulo-date">11 sep 2023</span>
+                        </div>
+                        <h3 class="articulo-title">El Balneario de Alceda, Cantabria, en la Guerra Civil</h3>
+                        <p class="articulo-excerpt">El 22 de agosto de 1937, los soldados italianos aliados de Franco tomaron el Balneario de Alceda. El coronel Cesare Gatti inmortalizó el momento. Sus fotos se conservan en el Archivio Centrale dello Stato, Roma.</p>
+                        <a href="articulo.html?id=5345" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Ver más -->
+                <a href="https://manuelaguilerapovedano.wordpress.com/category/historia/" target="_blank" rel="noopener" class="card-ver-mas">
+                    <div class="card-ver-mas-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" transform="rotate(180, 12, 12)"/></svg>
+                    </div>
+                    <strong>Ver todos los artículos</strong>
+                    <p>Más de 148 artículos de periodismo histórico disponibles en el blog original</p>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════ -->
+        <!-- ARTÍCULOS ACADÉMICOS -->
+        <!-- ═══════════════════════════════════════════════════ -->
+        <div class="categoria-bloque" data-bloque="academicos">
+            <div class="cat-header">
+                <div class="cat-icon academicos">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+                </div>
+                <div class="cat-title-wrap">
+                    <h2>Artículos académicos</h2>
+                    <span>Publicaciones científicas y capítulos de libro en revistas especializadas</span>
+                </div>
+                <span class="cat-count">+20</span>
+            </div>
+            <div class="articulos-grid">
+
+                <!-- 1 -->
+                <article class="articulo-card academicos">
+                    <a href="articulo.html?id=5637" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2025/01/branguli.-primeras-milicias-en-mallorca-anverso.jpg" alt="Milicias en Mallorca. Brangulí." loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat academicos">Académico</span>
+                            <span class="articulo-date">5 ene 2025</span>
+                        </div>
+                        <h3 class="articulo-title">Los datos humanos de la Batalla de Mallorca (1936): efectivos y bajas de cada bando</h3>
+                        <p class="articulo-excerpt">Publicado en <em>Studia Historica. Historia Contemporánea</em> (Universidad de Salamanca, Scopus, SJR). Estudio comparativo con gráficos sobre efectivos y bajas de la Batalla de Mallorca.</p>
+                        <a href="articulo.html?id=5637" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 2 -->
+                <article class="articulo-card academicos">
+                    <a href="articulo.html?id=5459" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2024/01/resena-los-relatos-de-la-guerra.-revista-de-estudios-historicos.-manuel-aguilera-povedano.png" alt="Reseña Revista de Estudios Históricos" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat academicos">Académico</span>
+                            <span class="articulo-date">10 ene 2024</span>
+                        </div>
+                        <h3 class="articulo-title">Reseña en la Revista de Estudios Históricos</h3>
+                        <p class="articulo-excerpt">La Revista de Estudios Históricos (UCM / GIGEFRA) publica la reseña de <em>Los relatos de la guerra</em>, coordinado por el profesor Alberto Guerrero Martín.</p>
+                        <a href="articulo.html?id=5459" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 3 -->
+                <article class="articulo-card academicos">
+                    <a href="articulo.html?id=5448" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2022/07/cubierta_oro_mussolini_final_3edic.jpg" alt="Portada El oro de Mussolini" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat academicos">Académico</span>
+                            <span class="articulo-date">4 dic 2023</span>
+                        </div>
+                        <h3 class="articulo-title">Audiolibro de 'El oro de Mussolini'</h3>
+                        <p class="articulo-excerpt">Disponible el audiolibro de <em>El oro de Mussolini</em>, narrado por el actor Joel Valverde. Accesible en Storytel, Google Play y Amazon.</p>
+                        <a href="articulo.html?id=5448" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 4 -->
+                <article class="articulo-card academicos">
+                    <a href="articulo.html?id=5378" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2023/10/libro-pau-tomas-david-ginard-manuel-aguilera.jpg" alt="Presentación libro Guerra Civil Franquisme" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat academicos">Académico</span>
+                            <span class="articulo-date">3 oct 2023</span>
+                        </div>
+                        <h3 class="articulo-title">Presentación del libro 'La Guerra Civil i el Primer Franquisme'</h3>
+                        <p class="articulo-excerpt">Presentación en la Biblioteca Pública de Palma del libro colectivo coordinado por Pau Tomàs Ramis y David Ginard, en el que participa con un capítulo sobre la Batalla de Mallorca.</p>
+                        <a href="articulo.html?id=5378" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 5 -->
+                <article class="articulo-card academicos">
+                    <a href="articulo.html?id=5361" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2023/09/libro-la-guerra-civil-y-primer-franquisme-mallorca-illa.jpg" alt="Libro La Guerra Civil y el primer Franquisme" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat academicos">Académico</span>
+                            <span class="articulo-date">25 sep 2023</span>
+                        </div>
+                        <h3 class="articulo-title">Capítulo de libro sobre la Batalla de Mallorca</h3>
+                        <p class="articulo-excerpt">Capítulo «La Batalla de Mallorca» en el libro colectivo <em>La Guerra Civil y el primer Franquisme. Mallorca, 1936-1959</em> (Illa Edicions, 2023), págs. 25–38.</p>
+                        <a href="articulo.html?id=5361" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Ver más -->
+                <a href="https://manuelaguilerapovedano.wordpress.com/category/articulos-academicos/" target="_blank" rel="noopener" class="card-ver-mas">
+                    <div class="card-ver-mas-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" transform="rotate(180, 12, 12)"/></svg>
+                    </div>
+                    <strong>Ver todos los artículos académicos</strong>
+                    <p>Más publicaciones científicas en el blog original</p>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════ -->
+        <!-- OPINIÓN -->
+        <!-- ═══════════════════════════════════════════════════ -->
+        <div class="categoria-bloque" data-bloque="opinion">
+            <div class="cat-header">
+                <div class="cat-icon opinion">
+                    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
+                </div>
+                <div class="cat-title-wrap">
+                    <h2>Opinión</h2>
+                    <span>Artículos de análisis y reflexión sobre historia, cultura y memoria</span>
+                </div>
+                <span class="cat-count">+30</span>
+            </div>
+            <div class="articulos-grid">
+
+                <!-- 1 -->
+                <article class="articulo-card opinion">
+                    <a href="articulo.html?id=5587" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2024/09/reparto-de-la-vaquilla-1985.jpg" alt="La Vaquilla 1985" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat opinion">Opinión</span>
+                            <span class="articulo-date">15 sep 2024</span>
+                        </div>
+                        <h3 class="articulo-title">La mejor película de la Guerra Civil</h3>
+                        <p class="articulo-excerpt">De <em>La Vaquilla</em> a <em>Tierra y Libertad</em>, pasando por <em>Soldados de Salamina</em>. Las cinco películas más importantes de la Guerra Civil Española según Manuel Aguilera.</p>
+                        <a href="articulo.html?id=5587" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 2 -->
+                <article class="articulo-card opinion">
+                    <a href="articulo.html?id=5546" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2024/03/adolfo-arranz-reuters.jpeg" alt="Adolfo Arranz Reuters" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat opinion">Opinión</span>
+                            <span class="articulo-date">28 mar 2024</span>
+                        </div>
+                        <h3 class="articulo-title">La portada de tesis del infografista Adolfo Arranz</h3>
+                        <p class="articulo-excerpt">Adolfo Arranz, nombrado infografista del año 2023 en los premios Reuters, regaló en 2009 una ilustración para la portada de la tesis doctoral de Manuel Aguilera sobre la Guerra Civil.</p>
+                        <a href="articulo.html?id=5546" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 3 -->
+                <article class="articulo-card opinion">
+                    <a href="articulo.html?id=5466" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2024/01/china-shanghai-camaras.jpg" alt="Cámaras en Shanghái" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat opinion">Opinión</span>
+                            <span class="articulo-date">14 ene 2024</span>
+                        </div>
+                        <h3 class="articulo-title">China: la pesadilla de Orwell</h3>
+                        <p class="articulo-excerpt">Crónica de viaje a Shanghái: la pesadilla de Orwell hecha realidad. Un país controlado por cámaras donde el Gran Hermano siempre vigila, con una ciudad silenciosa de 26 millones de vehículos eléctricos.</p>
+                        <a href="articulo.html?id=5466" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- 4 -->
+                <article class="articulo-card opinion">
+                    <a href="articulo.html?id=5570" target="_blank" rel="noopener">
+                        <img class="articulo-card-img" src="https://manuelaguilerapovedano.wordpress.com/wp-content/uploads/2024/07/torre-son-simonet.-foto-de-camilo-perez.jpg" alt="Torre Son Simonet" loading="lazy" />
+                    </a>
+                    <div class="articulo-card-body">
+                        <div class="articulo-meta">
+                            <span class="articulo-cat opinion">Opinión</span>
+                            <span class="articulo-date">18 jul 2024</span>
+                        </div>
+                        <h3 class="articulo-title">Historias de la 'puta mili' en Son Simonet</h3>
+                        <p class="articulo-excerpt">Testimonios del servicio militar en el cuartel de Son Simonet (Palma), demolido en 2023 para construir 215 pisos. Un año de mili en 1977, en plena transición democrática.</p>
+                        <a href="articulo.html?id=5570" class="articulo-link" target="_blank" rel="noopener">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Ver más -->
+                <a href="https://manuelaguilerapovedano.wordpress.com/category/opinion/" target="_blank" rel="noopener" class="card-ver-mas">
+                    <div class="card-ver-mas-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" transform="rotate(180, 12, 12)"/></svg>
+                    </div>
+                    <strong>Ver todos los artículos de opinión</strong>
+                    <p>Más artículos de análisis y reflexión en el blog original</p>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <span style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: #fff;">Tejiendo Historia</span>
+                <p>Blog de periodismo histórico de Manuel Aguilera Povedano sobre la Guerra Civil Española, la Batalla de Mallorca y la memoria de Baleares.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Publicaciones</a></li>
+                    <li><a href="articulos.html">Artículos</a></li>
+                    <li><a href="nosotros.html">Sobre mí</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Categorías</h4>
+                <ul>
+                    <li><a href="https://manuelaguilerapovedano.wordpress.com/category/historia/" target="_blank" rel="noopener">Periodismo histórico</a></li>
+                    <li><a href="https://manuelaguilerapovedano.wordpress.com/category/articulos-academicos/" target="_blank" rel="noopener">Artículos académicos</a></li>
+                    <li><a href="https://manuelaguilerapovedano.wordpress.com/category/opinion/" target="_blank" rel="noopener">Opinión</a></li>
+                    <li><a href="https://manuelaguilerapovedano.wordpress.com/" target="_blank" rel="noopener">Blog completo</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copy">© 2026 Manuel Aguilera Povedano · Tejiendo Historia</p>
+            <div class="footer-social">
+                <a href="https://x.com/Maguilera_" target="_blank" rel="noopener" aria-label="Twitter/X">
+                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://manuelaguilerapovedano.wordpress.com/" target="_blank" rel="noopener" aria-label="Blog WordPress">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Filtro por categoría
+    const filtros = document.querySelectorAll('.filtro-btn');
+    const bloques = document.querySelectorAll('.categoria-bloque[data-bloque]');
+
+    filtros.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filtros.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const cat = btn.dataset.cat;
+            if (cat === 'todos') {
+                bloques.forEach(b => b.style.display = '');
+            } else {
+                bloques.forEach(b => {
+                    b.style.display = b.dataset.bloque === cat ? '' : 'none';
+                });
+            }
+            document.querySelector('.articulos-section').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Menú móvil
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+</script>
+</body>
+</html>
