@@ -28,8 +28,9 @@
             --font-display: 'Playfair Display', Georgia, serif;
             --font-body: 'Source Serif 4', Georgia, serif;
             --radius: 4px;
-            --shadow: 0 4px 24px rgba(0,0,0,0.08);
-            --transition: all 0.3s ease;
+            --shadow: 0 4px 24px rgba(27, 58, 92, 0.09);
+            --shadow-hover: 0 12px 40px rgba(27, 58, 92, 0.16);
+            --transition: all 0.28s cubic-bezier(0.25, 0, 0, 1);
             --max-width: 1100px;
             --article-width: 740px;
         }
@@ -69,7 +70,7 @@
         .articulo-header { background: var(--color-bg-dark); padding: 24px 24px 64px; }
         .articulo-header-inner { max-width: var(--article-width); margin: 0 auto; }
         .articulo-cat { display: inline-block; font-size: 11px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 20px; border-left: 2px solid var(--color-secondary); padding-left: 12px; }
-        .articulo-titulo { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; line-height: 1.15; color: var(--color-white); margin-bottom: 24px; }
+        .articulo-titulo { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance; color: var(--color-white); margin-bottom: 24px; }
         .articulo-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
         .articulo-fecha { font-size: 14px; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; }
         .articulo-wp-link { font-size: 13px; color: rgba(255,255,255,0.4); border: 1px solid rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 20px; transition: var(--transition); }
@@ -185,6 +186,13 @@
             .articulo-body table { font-size: 13px; }
             .articulo-body th, .articulo-body td { padding: 7px 10px; }
         }
+
+        /* ─── ACCESIBILIDAD & ESTADOS ─── */
+        :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+        .nav-toggle span { transition: transform 0.28s cubic-bezier(0.25, 0, 0, 1), opacity 0.2s ease; }
+        .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     </style>
 </head>
 <body>
@@ -268,7 +276,16 @@
     // ─── Navegación móvil ───
     const toggle = document.getElementById('nav-toggle');
     const nav = document.getElementById('site-nav');
-    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        toggle.classList.toggle('open');
+    });
+    document.querySelectorAll('.site-nav a').forEach(a => {
+        a.addEventListener('click', () => {
+            nav.classList.remove('open');
+            toggle.classList.remove('open');
+        });
+    });
 
     // ─── Mapas de etiquetas de categoría ───
     const CAT_LABELS = {

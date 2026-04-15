@@ -30,9 +30,9 @@
             --font-display: 'Playfair Display', Georgia, serif;
             --font-body: 'Source Serif 4', Georgia, serif;
             --radius: 4px;
-            --shadow: 0 4px 24px rgba(0,0,0,0.08);
-            --shadow-hover: 0 8px 40px rgba(0,0,0,0.14);
-            --transition: all 0.3s ease;
+            --shadow: 0 4px 24px rgba(27, 58, 92, 0.09);
+            --shadow-hover: 0 12px 40px rgba(27, 58, 92, 0.16);
+            --transition: all 0.28s cubic-bezier(0.25, 0, 0, 1);
             --max-width: 1100px;
         }
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -65,7 +65,7 @@
         .page-hero { background: var(--color-bg-dark); padding: 130px 24px 72px; }
         .page-hero-inner { max-width: var(--max-width); margin: 0 auto; }
         .page-label { display: inline-block; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 20px; border-left: 2px solid var(--color-secondary); padding-left: 12px; }
-        .page-title { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: var(--color-white); line-height: 1.1; margin-bottom: 16px; }
+        .page-title { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: var(--color-white); line-height: 1.05; letter-spacing: -0.025em; text-wrap: balance; margin-bottom: 16px; }
         .page-desc { font-size: 1.1rem; color: rgba(255,255,255,0.7); max-width: 580px; line-height: 1.7; }
 
         /* ─── FILTROS ─── */
@@ -158,16 +158,16 @@
 
         .articulo-card {
             background: var(--color-white);
-            border-radius: var(--radius);
-            border: 1px solid rgba(0,0,0,0.07);
+            border-radius: 8px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(27, 58, 92, 0.06);
         }
         .articulo-card:hover {
             box-shadow: var(--shadow-hover);
-            transform: translateY(-4px);
+            transform: translateY(-3px);
         }
         .articulo-card-img {
             width: 100%;
@@ -286,6 +286,14 @@
             .articulos-grid { grid-template-columns: 1fr; }
             .articulos-section { padding: 48px 20px 80px; }
         }
+
+        /* ─── ACCESIBILIDAD & ESTADOS ─── */
+        :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+        .filtro-btn:active { transform: scale(0.97); }
+        .nav-toggle span { transition: transform 0.28s cubic-bezier(0.25, 0, 0, 1), opacity 0.2s ease; }
+        .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     </style>
 </head>
 <body>
@@ -906,7 +914,16 @@
     // Menú móvil
     const toggle = document.getElementById('nav-toggle');
     const nav = document.getElementById('site-nav');
-    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        toggle.classList.toggle('open');
+    });
+    document.querySelectorAll('.site-nav a').forEach(a => {
+        a.addEventListener('click', () => {
+            nav.classList.remove('open');
+            toggle.classList.remove('open');
+        });
+    });
 </script>
 </body>
 </html>
